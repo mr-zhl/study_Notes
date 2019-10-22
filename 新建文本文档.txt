@@ -1,0 +1,17 @@
+日/周/月/季          排查周期
+
+SELECT
+	a.id,
+	b.id,
+	c.id,
+	d.id 
+FROM
+	
+t_potentialcheck a
+  LEFT JOIN t_potential_inspect b ON a.id = b.potentialcheck_id
+	
+LEFT JOIN t_potential_reform c ON b.id = c.potential_inspect_id
+	LEFT JOIN t_collect d ON c.id= d.zgid
+	
+WHERE a.id = 5
+
